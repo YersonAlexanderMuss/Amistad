@@ -1,0 +1,70 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('background.jpg'); /* Cambia 'background.jpg' por tu imagen de fondo */
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sunflower {
+  width: 200px;
+  height: 200px;
+  background-image: url('sunflower.png');
+  background-size: cover;
+  background-position: center; /* Centra la imagen */
+  animation: rotate 5s infinite linear;
+}
+
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.text-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.text {
+  font-size: 36px;
+  color: #ffcc00;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.petal {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall 2s infinite linear, rotate 4s infinite linear;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(400px) rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
