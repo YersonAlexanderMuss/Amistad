@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const textElement = document.getElementById('typed-text');
-  const fullText = "Para tí Leonela";
+  const fullText = "Para ti Leonela";
   let i = 0;
   const speed = 100; // Velocidad de escritura (milisegundos por letra)
 
