@@ -17,8 +17,8 @@ body {
 
 /* --- ESTILOS DE LAS FLORES --- */
 .sunflower {
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 170px;
   background-image: url('sunflower.png');
   background-size: cover;
   position: absolute;
@@ -49,7 +49,7 @@ body {
 /* --- ESTILOS DEL TEXTO --- */
 .text-container {
   position: absolute;
-  top: 15%;
+  top: 12%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -59,16 +59,16 @@ body {
 
 .text {
   font-size: 38px;
-  color: #FFD700;
-  text-shadow: 0 0 10px rgba(255, 255, 0, 0.8),
-               0 0 20px rgba(255, 255, 0, 0.6);
+  color: #DAA520; /* ✅ Amarillo oscuro / dorado */
+  /* ✅ Sombra ajustada para el nuevo color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 
+               0 0 8px rgba(218, 165, 32, 0.7); 
   animation: text-glow 1.5s infinite alternate;
-  /* Quitamos nowrap para que el texto pueda ajustarse si es necesario */
 }
 
 .cursor {
   display: inline-block;
-  background-color: #ffcc00;
+  background-color: #DAA520; /* ✅ Cursor también ajustado al nuevo color */
   width: 3px;
   height: 1.1em;
   vertical-align: bottom;
@@ -88,9 +88,10 @@ body {
   to   { transform: rotate(360deg); }
 }
 
+/* ✅ Animación de brillo ajustada para el nuevo color */
 @keyframes text-glow {
-  from { text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.6); }
-  to   { text-shadow: 0 0 15px rgba(255, 255, 0, 1), 0 0 25px rgba(255, 255, 0, 0.8); }
+  from { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 8px rgba(218, 165, 32, 0.7); }
+  to   { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 12px rgba(218, 165, 32, 0.9); }
 }
 
 @keyframes blink {
@@ -104,17 +105,17 @@ body {
 @media (max-width: 768px) {
   
   .text {
-    font-size: 24px; /* Hacemos la letra más pequeña */
+    font-size: 24px;
   }
 
   .sunflower {
-    width: 90px; /* Hacemos las flores más pequeñas */
-    height: 90px;
+    width: 100px;
+    height: 100px;
   }
 
   .flower-one {
     top: 30%;
-    left: 10%; /* Las movemos para que quepan */
+    left: 10%;
   }
 
   .flower-two {
