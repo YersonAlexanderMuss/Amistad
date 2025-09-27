@@ -1,38 +1,56 @@
+/* --- ESTILOS GENERALES --- */
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
-  background-image: url('background.jpg'); /* Cambia 'background.jpg' por tu imagen de fondo */
+  height: 100vh;
+  background-image: url('background.jpg');
   background-size: cover;
+  overflow: hidden; /* Evita que las flores se salgan de la pantalla */
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative; /* Contenedor principal para posicionar los elementos */
+  width: 100%;
+  height: 100%;
 }
 
+/* --- ESTILOS DE LAS FLORES --- */
 .sunflower {
-  width: 200px;
-  height: 200px;
+  width: 150px; /* Un tamaño un poco más pequeño para que quepan mejor */
+  height: 150px;
   background-image: url('sunflower.png');
   background-size: cover;
-  background-position: center; /* Centra la imagen */
-  animation: rotate 5s infinite linear;
+  position: absolute; /* ¡Importante! Permite moverlas libremente */
 }
 
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+/* Posición y animación para la primera flor */
+.flower-one {
+  top: 10%;
+  left: 15%;
+  animation: float 6s ease-in-out infinite;
 }
 
+/* Posición y animación para la segunda flor */
+.flower-two {
+  top: 40%;
+  left: 40%;
+  animation: float 8s ease-in-out infinite 1s; /* Se mueve más lento y empieza 1s después */
+}
+
+/* Posición y animación para la tercera flor */
+.flower-three {
+  top: 20%;
+  left: 70%;
+  animation: float 5s ease-in-out infinite 0.5s; /* Se mueve más rápido y empieza 0.5s después */
+}
+
+/* --- ESTILOS DEL TEXTO --- */
 .text-container {
+  position: absolute;
+  top: 80%; /* Lo bajamos un poco para que no choque con las flores */
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  margin-top: 20px;
+  width: 100%;
 }
 
 .text {
@@ -41,6 +59,20 @@ body {
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* --- DEFINICIÓN DE LA ANIMACIÓN --- */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) translateX(20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* --- Tu animación de pétalos (la dejé por si la quieres usar) --- */
 .petal {
   position: absolute;
   width: 10px;
@@ -48,7 +80,7 @@ body {
   background-color: #ffcc00;
   border-radius: 50%;
   opacity: 0.8;
-  animation: fall 2s infinite linear, rotate 4s infinite linear;
+  animation: fall 2s infinite linear;
 }
 
 @keyframes fall {
@@ -57,14 +89,5 @@ body {
   }
   100% {
     transform: translateY(400px) rotate(360deg);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
