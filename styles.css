@@ -4,6 +4,7 @@ body {
   height: 100vh;
   background-image: url('background.jpg');
   background-size: cover;
+  background-position: center; /* Asegura que la imagen de fondo se vea bien */
   overflow: hidden; /* Evita que las flores se salgan de la pantalla */
 }
 
@@ -19,46 +20,50 @@ body {
   height: 150px;
   background-image: url('sunflower.png');
   background-size: cover;
-  position: absolute; /* ¡Importante! Permite moverlas libremente */
+  position: absolute;
+  /* Animaciones combinadas: flotar Y girar */
+  animation: float 6s ease-in-out infinite, rotate 10s linear infinite; /* Añadida animación 'rotate' */
 }
 
 /* Posición y animación para la primera flor */
 .flower-one {
   top: 30%;
   left: 15%;
-  animation: float 6s ease-in-out infinite;
+  /* Retraso diferente para el giro también */
+  animation: float 6s ease-in-out infinite, rotate 10s linear infinite 0.5s; 
 }
 
 /* Posición y animación para la segunda flor */
 .flower-two {
   top: 50%;
   left: 40%;
-  animation: float 8s ease-in-out infinite 1s; /* Se mueve más lento y empieza 1s después */
+  animation: float 8s ease-in-out infinite 1s, rotate 12s linear infinite 1s;
 }
 
 /* Posición y animación para la tercera flor */
 .flower-three {
   top: 35%;
   left: 70%;
-  animation: float 5s ease-in-out infinite 0.5s; /* Se mueve más rápido y empieza 0.5s después */
+  animation: float 5s ease-in-out infinite 0.5s, rotate 8s linear infinite 0.2s;
 }
 
 /* --- ESTILOS DEL TEXTO (EFECTO MÁQUINA DE ESCRIBIR) --- */
 .text-container {
   position: absolute;
-  top: 15%; /* Posición en la parte de arriba */
+  top: 10%; /* ✅ Ajustado para que esté más arriba */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   width: 90%;
+  z-index: 100; /* ¡Importante! Asegura que el texto esté por encima de todo */
 }
 
 .text {
-  font-family: 'Courier New', monospace; /* Fuente de máquina de escribir */
+  font-family: 'Courier New', monospace;
   font-size: 38px;
-  color: #FFFFF0; /* Blanco amarillento */
+  color: #FFFFF0;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+  white-space: nowrap;
   overflow: hidden;
 }
 
@@ -76,15 +81,21 @@ body {
 /* --- DEFINICIÓN DE ANIMACIONES --- */
 @keyframes float {
   0% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px) translateX(0px); /* Ajuste para combinar mejor con rotate */
   }
   50% {
-    transform: translateY(-20px) translateX(20px) rotate(5deg);
+    transform: translateY(-20px) translateX(20px);
   }
   100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px) translateX(0px);
   }
 }
+
+@keyframes rotate { /* ✅ Nueva animación de rotación */
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
