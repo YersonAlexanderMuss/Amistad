@@ -34,7 +34,7 @@ body {
 /* Posición y animación para la segunda flor (la del centro, más arriba) */
 .flower-two {
   top: 40%;
-  left: 15%;
+  left: 20%;
   animation: float 8s ease-in-out infinite 1s, rotate 12s linear infinite 1s;
 }
 
@@ -49,7 +49,7 @@ body {
 .text-container {
   position: absolute;
   top: 10%;
-  left: 50%;
+  left: 60%;
   transform: translateX(-50%);
   text-align: center;
   width: 90%;
@@ -99,6 +99,7 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
 
 
 
