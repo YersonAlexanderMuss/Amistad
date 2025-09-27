@@ -1,4 +1,4 @@
-/* --- ESTILOS GENERALES --- */
+  /* --- ESTILOS GENERALES --- */
 body {
   margin: 0;
   height: 100vh;
@@ -27,21 +27,21 @@ body {
 /* Posición y animación para la primera flor (más cerca del centro) */
 .flower-one {
   top: 25%;
-  left: 28%;
+  left: 25%;
   animation: float 6s ease-in-out infinite, rotate 10s linear infinite 0.5s; 
 }
 
 /* Posición y animación para la segunda flor (la del centro, más arriba) */
 .flower-two {
   top: 40%;
-  left: 48%;
+  left: 45%;
   animation: float 8s ease-in-out infinite 1s, rotate 12s linear infinite 1s;
 }
 
 /* Posición y animación para la tercera flor (más cerca del centro) */
 .flower-three {
   top: 25%;
-  left: 68%;
+  left: 65%;
   animation: float 5s ease-in-out infinite 0.5s, rotate 8s linear infinite 0.2s;
 }
 
@@ -99,4 +99,5 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
 
