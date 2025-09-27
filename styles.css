@@ -18,7 +18,7 @@ body {
 .sunflower {
   width: 150px;
   height: 150px;
-  background-image: url('sunflower.png'); /* Asegúrate de que esta imagen exista */
+  background-image: url('sunflower.png');
   background-size: cover;
   position: absolute;
   animation: float 8s ease-in-out infinite, rotate 10s linear infinite;
@@ -26,26 +26,26 @@ body {
 
 /* Posición y animación para la primera flor (más cerca del centro) */
 .flower-one {
-  top: 25%; /* Un poco más arriba */
-  left: 28%; /* Más al centro */
+  top: 25%;
+  left: 28%;
   animation: float 6s ease-in-out infinite, rotate 10s linear infinite 0.5s; 
 }
 
 /* Posición y animación para la segunda flor (la del centro, más arriba) */
 .flower-two {
-  top: 40%; /* ✅ SUBIDA UN POCO MÁS para que no choque */
-  left: 48%; /* Casi centrada */
+  top: 40%;
+  left: 48%;
   animation: float 8s ease-in-out infinite 1s, rotate 12s linear infinite 1s;
 }
 
 /* Posición y animación para la tercera flor (más cerca del centro) */
 .flower-three {
-  top: 25%; /* Un poco más arriba */
-  left: 68%; /* Más al centro */
+  top: 25%;
+  left: 68%;
   animation: float 5s ease-in-out infinite 0.5s, rotate 8s linear infinite 0.2s;
 }
 
-/* --- ESTILOS DEL TEXTO (EFECTO MÁQUINA DE ESCRIBIR CON COLOR Y DESTELLO) --- */
+/* --- ESTILOS DEL TEXTO --- */
 .text-container {
   position: absolute;
   top: 10%;
@@ -57,23 +57,21 @@ body {
 }
 
 .text {
-  font-family: 'Courier New', monospace; /* Mantengo esta fuente por el efecto de máquina de escribir */
+  font-family: 'Courier New', monospace;
   font-size: 38px;
-  color: #FFD700; /* ✅ Color amarillo dorado */
-  text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), /* Sombra luminosa amarilla */
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 255, 0, 0.8),
                0 0 20px rgba(255, 255, 0, 0.6),
                0 0 30px rgba(255, 255, 0, 0.4);
   white-space: nowrap;
   overflow: hidden;
-  animation: text-glow 1.5s infinite alternate; /* ✅ Animación de destello */
+  animation: text-glow 1.5s infinite alternate;
 }
 
-/* Animación para el destello del texto */
 @keyframes text-glow {
   0%   { text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.6); }
   100% { text-shadow: 0 0 15px rgba(255, 255, 0, 1), 0 0 25px rgba(255, 255, 0, 0.8), 0 0 35px rgba(255, 255, 0, 0.6); }
 }
-
 
 .cursor {
   display: inline-block;
@@ -102,32 +100,3 @@ body {
   50% { opacity: 0; }
 }
 
-/* ✅ EFECTO DE CONFETI (para los pétalos, como si fueran confeti) */
-/* Asegúrate de que tu HTML tenga elementos con la clase 'petal' */
-/* Por ejemplo, podrías añadir un script.js para generar pétalos aleatorios */
-/* Si no tienes un script para generar pétalos, esta parte no tendrá efecto visual */
-.petal {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #FFD700; /* Amarillo confeti */
-  border-radius: 50%; /* Para que sean redondos */
-  opacity: 0.8;
-  animation: fall-confetti 4s infinite linear;
-  pointer-events: none; /* Para que no interfieran con clics */
-  z-index: 99; /* Debajo del texto pero encima del fondo */
-}
-
-@keyframes fall-confetti {
-  0% {
-    transform: translateY(-100px) rotate(0deg) scale(1);
-    opacity: 0;
-    left: var(--random-left); /* Usa una variable para posición aleatoria */
-  }
-  10% { opacity: 1; }
-  100% {
-    transform: translateY(100vh) rotate(720deg) scale(0.8);
-    opacity: 0;
-    left: var(--random-left-end);
-  }
-}
