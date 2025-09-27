@@ -41,7 +41,7 @@ body {
 /* Posición y animación para la tercera flor (más cerca del centro) */
 .flower-three {
   top: 25%;
-  left: 25%;
+  left: 35%;
   animation: float 5s ease-in-out infinite 0.5s, rotate 8s linear infinite 0.2s;
 }
 
@@ -49,7 +49,7 @@ body {
 .text-container {
   position: absolute;
   top: 10%;
-  left: 60%;
+  left: 55%;
   transform: translateX(-50%);
   text-align: center;
   width: 90%;
@@ -99,6 +99,7 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
 
 
 
